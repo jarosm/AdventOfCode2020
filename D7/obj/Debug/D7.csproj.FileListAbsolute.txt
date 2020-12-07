@@ -1,0 +1,10 @@
+D:\programming\Advent of Code\source\AdventOfCode2020\D7\bin\Debug\D7.exe.config
+D:\programming\Advent of Code\source\AdventOfCode2020\D7\bin\Debug\D7.exe
+D:\programming\Advent of Code\source\AdventOfCode2020\D7\bin\Debug\D7.pdb
+D:\programming\Advent of Code\source\AdventOfCode2020\D7\obj\Debug\D7.csprojAssemblyReference.cache
+D:\programming\Advent of Code\source\AdventOfCode2020\D7\obj\Debug\D7.csproj.CoreCompileInputs.cache
+D:\programming\Advent of Code\source\AdventOfCode2020\D7\obj\Debug\D7.exe
+D:\programming\Advent of Code\source\AdventOfCode2020\D7\obj\Debug\D7.pdb
+D:\programming\Advent of Code\source\AdventOfCode2020\D7\bin\Debug\System.ValueTuple.dll
+D:\programming\Advent of Code\source\AdventOfCode2020\D7\bin\Debug\System.ValueTuple.xml
+D:\programming\Advent of Code\source\AdventOfCode2020\D7\obj\Debug\D7.csproj.CopyComplete
