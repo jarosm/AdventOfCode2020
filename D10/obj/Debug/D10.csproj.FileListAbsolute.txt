@@ -1,0 +1,7 @@
+D:\programming\Advent of Code\source\AdventOfCode2020\D10\bin\Debug\D10.exe.config
+D:\programming\Advent of Code\source\AdventOfCode2020\D10\bin\Debug\D10.exe
+D:\programming\Advent of Code\source\AdventOfCode2020\D10\bin\Debug\D10.pdb
+D:\programming\Advent of Code\source\AdventOfCode2020\D10\obj\Debug\D10.csprojAssemblyReference.cache
+D:\programming\Advent of Code\source\AdventOfCode2020\D10\obj\Debug\D10.csproj.CoreCompileInputs.cache
+D:\programming\Advent of Code\source\AdventOfCode2020\D10\obj\Debug\D10.exe
+D:\programming\Advent of Code\source\AdventOfCode2020\D10\obj\Debug\D10.pdb
