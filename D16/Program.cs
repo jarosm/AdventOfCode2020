@@ -198,7 +198,7 @@ namespace D16
                 Console.WriteLine();
             }
 
-            // Eyball Mk.I
+            // Eyeball Mk.I
             long multi = (long)myTicket[12] * myTicket[7] * myTicket[13] * myTicket[17] * myTicket[1] * myTicket[4];
             Console.WriteLine("");
             Console.WriteLine(multi);
