@@ -1,0 +1,7 @@
+D:\programming\Advent of Code\source\AdventOfCode2020\D18\bin\Debug\D18.exe.config
+D:\programming\Advent of Code\source\AdventOfCode2020\D18\bin\Debug\D18.exe
+D:\programming\Advent of Code\source\AdventOfCode2020\D18\bin\Debug\D18.pdb
+D:\programming\Advent of Code\source\AdventOfCode2020\D18\obj\Debug\D18.csprojAssemblyReference.cache
+D:\programming\Advent of Code\source\AdventOfCode2020\D18\obj\Debug\D18.csproj.CoreCompileInputs.cache
+D:\programming\Advent of Code\source\AdventOfCode2020\D18\obj\Debug\D18.exe
+D:\programming\Advent of Code\source\AdventOfCode2020\D18\obj\Debug\D18.pdb
