@@ -8,90 +8,58 @@ namespace D18
 {
     class Program
     {
-        static private ulong EvaluatePart1(string expr, ref int index)
+        static private int GetOperatorPrecedence(char op, int part)
         {
-            ulong result;
-
-            if (expr[index] == '(')
+            switch (op)
             {
-                index++;
-                result = EvaluatePart1(expr, ref index);
+                case '+':
+                    return part == 1 ? 1 : 2;
+                case '*':
+                    return 1;
+                default:
+                    return 0;
             }
-            else
-            {
-                result = (uint)Char.GetNumericValue(expr[index]);
-                index++;
-            }
-
-            while ((index < expr.Length) && (expr[index] != ')'))
-            {
-                char op = expr[index];
-                index++;
-
-                ulong num; 
-                if (expr[index] == '(')
-                {
-                    index++;
-                    num = EvaluatePart1(expr, ref index);
-                }
-                else
-                {
-                    num = (uint)Char.GetNumericValue(expr[index]);
-                    index++;
-                }
-
-                if (op == '+')
-                    result += num;
-                else
-                    result *= num;
-            }
-            index++; // possible rigth parenthesis
-
-            return result;
         }
 
 
-        static private ulong EvaluatePart2(string expr, ref int index)
+        static private void Compute(ref Stack<long> stack, char op)
         {
-            ulong result;
-
-            if (expr[index] == '(')
-            {
-                index++;
-                return EvaluatePart2(expr, ref index);
-            }
+            long num1 = stack.Pop(), num2 = stack.Pop();
+            if (op == '+')
+                stack.Push(num1 + num2);
             else
-            {
-                result = (uint)Char.GetNumericValue(expr[index]);
-                index++;
-            }
+                stack.Push(num1 * num2);
+        }
 
-            while ((index < expr.Length) && (expr[index] != ')'))
+
+        static private long Evaluate(string expression, int part)
+        {
+            Stack<char> operatorStack = new Stack<char>();
+            Stack<long> resultStack = new Stack<long>();
+
+            foreach (char c in expression)
             {
-                if (expr[index] == '*')
+                if (char.IsDigit(c))
+                    resultStack.Push((long)char.GetNumericValue(c));
+                else if (c == '+' || c == '*')
                 {
-                    index++;
-                    result *= EvaluatePart2(expr, ref index);
+                    while ((operatorStack.Count > 0) && (operatorStack.Peek() != '(') && (GetOperatorPrecedence(operatorStack.Peek(), part) >= GetOperatorPrecedence(c, part)))
+                        Compute(ref resultStack, operatorStack.Pop());
+                    operatorStack.Push(c);
                 }
-                else
+                else if (c == '(')
+                    operatorStack.Push(c);
+                else // ')'
                 {
-                    index++;
-                    if (expr[index] == '(')
-                    {
-                        index++;
-                        result += EvaluatePart2(expr, ref index);
-                    }
-                    else
-                    {
-                        result += (uint)Char.GetNumericValue(expr[index]);
-                        index++;
-                    }
+                    while (operatorStack.Peek() != '(')
+                        Compute(ref resultStack, operatorStack.Pop());
+                    operatorStack.Pop(); // '('
                 }
             }
-            if ((index < expr.Length) && (expr[index] == ')'))
-                index++;
+            while (operatorStack.Count > 0)
+                Compute(ref resultStack, operatorStack.Pop());
 
-            return result;
+            return resultStack.Pop();
         }
 
 
@@ -107,23 +75,17 @@ namespace D18
                 }
             }
 
-            ulong sum = 0;
-            foreach (string expr in lines)
+            long sum = 0;
+            foreach (string expression in lines)
             {
-                int index = 0;
-
-                sum += EvaluatePart1(expr, ref index);
+                sum += Evaluate(expression, 1);
             }
             Console.WriteLine("Part 1: " + sum);
 
-
-            Console.WriteLine("!! Part 2 gives wrong numbers !!");
             sum = 0;
-            foreach (string expr in lines)
+            foreach (string expression in lines)
             {
-                int index = 0;
-
-                sum += EvaluatePart2(expr, ref index);
+                sum += Evaluate(expression, 2);
             }
             Console.WriteLine("Part 2: " + sum);
 
