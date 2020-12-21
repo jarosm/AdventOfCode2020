@@ -1,4 +1,0 @@
-Quick start.linq
-Nested types.linq
-Using record types.linq
-Diagnostic tools.linq

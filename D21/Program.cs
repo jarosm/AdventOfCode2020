@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using RegExtract;
 
 namespace D21
 {
@@ -11,17 +10,17 @@ namespace D21
     {
         private static void D21()
         {
-            List<string> lines = new List<string>();
+            List<(HashSet<string>, List<string>)> foods = new List<(HashSet<string>, List<string>)>();
             using (StreamReader input = File.OpenText("d:\\programming\\Advent of Code\\data 2020\\D21\\input.txt"))
             {
                 string line = "";
                 while ((line = input.ReadLine()) != null)
                 {
-                    lines.Add(line);
+                    string[] t1 = line.Replace(" (contains ", "|").Replace(", ", ",").Replace(")", "").Split('|');
+                    foods.Add((new HashSet<string>(t1[0].Split(' ')), new List<string>(t1[1].Split(','))));
                 }
             }
 
-            var foods = lines.Extract<(List<string>, List<string>)>(@"(?:(\w+) )+\(contains (?:(\w+)(?:, )?)+\)").Select(x => (new HashSet<string>(x.Item1), x.Item2)).ToArray();
             var allergens = foods.SelectMany(food => food.Item2).Distinct().ToArray();
             var candidates = new Dictionary<string, HashSet<string>>();
 
@@ -42,7 +41,7 @@ namespace D21
             int count = 0;
             foreach (var food in foods)
             {
-                count += food.Item1.Count(ingr => !allCandidates.Contains(ingr));
+                count += food.Item1.Count(i => !allCandidates.Contains(i));
             }
 
             Console.WriteLine("Part 1: " + count);

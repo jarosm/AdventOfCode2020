@@ -5,7 +5,6 @@ D:\programming\Advent of Code\source\AdventOfCode2020\D21\obj\Debug\D21.csproj.C
 D:\programming\Advent of Code\source\AdventOfCode2020\D21\obj\Debug\D21.exe
 D:\programming\Advent of Code\source\AdventOfCode2020\D21\obj\Debug\D21.pdb
 D:\programming\Advent of Code\source\AdventOfCode2020\D21\obj\Debug\D21.csprojAssemblyReference.cache
-D:\programming\Advent of Code\source\AdventOfCode2020\D21\bin\Debug\RegExtract.dll
 D:\programming\Advent of Code\source\AdventOfCode2020\D21\bin\Debug\System.ValueTuple.dll
 D:\programming\Advent of Code\source\AdventOfCode2020\D21\bin\Debug\System.ValueTuple.xml
 D:\programming\Advent of Code\source\AdventOfCode2020\D21\obj\Debug\D21.csproj.CopyComplete
