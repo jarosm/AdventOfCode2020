@@ -26,7 +26,7 @@ namespace D22
 
             while (player1.Any() && player2.Any())
             {
-                if (CheckHistory(player1, p1History) && CheckHistory(player1, p1History))
+                if (CheckHistory(player1, p1History) && CheckHistory(player2, p2History))
                     return 1;
 
                 p1History.Add(player1.ToList());
@@ -102,8 +102,7 @@ namespace D22
 
             var winner = player1.Any() ? player1 : player2;
             var i = winner.Count;
-
-            Console.WriteLine("Part 1: " + winner.Aggregate(0L, (a, b) => a + (b * i--)).ToString());
+            Console.WriteLine("Part 1: " + winner.Aggregate(0L, (a, b) => a + (b * i--)));
         }
 
 
@@ -118,8 +117,7 @@ namespace D22
 
             var winner = player1.Any() ? player1 : player2;
             var i = winner.Count;
-
-            Console.WriteLine("Part 2: " + winner.Aggregate(0L, (a, b) => a + (b * i--)).ToString());
+            Console.WriteLine("Part 2: " + winner.Aggregate(0L, (a, b) => a + (b * i--)));
 
             Console.WriteLine("end");
             Console.ReadLine();
